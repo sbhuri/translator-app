@@ -5,7 +5,7 @@ import os
 from PyPDF2 import PdfReader
 import pandas as pd
 
-openai.api_key = os.ENV("API_Token")
+openai.api_key = st.secrets["api_token"]
 def translate_text(text, target_language):
     try:
         response = openai.chat.completions.create(
